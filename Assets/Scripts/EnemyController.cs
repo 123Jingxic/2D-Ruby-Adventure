@@ -37,25 +37,10 @@ public class EnemyController : MonoBehaviour
         {
             direction = -direction;
             timer = changeTime;
-    }
-}
-void FixedUpdate()
-    {
-         Vector2 position = rigidbody2D.position;
-        
-        if (vertical)
-        {
-            position.y = position.y + Time.deltaTime * speed * direction;;
         }
-        else
-        {
-            position.x = position.x + Time.deltaTime * speed * direction;;
-        }
-        
-        rigidbody2D.MovePosition(position);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void FixedUpdate()
     {
         //remember ! inverse the test, so if broken is true !broken will be false and return won’t be executed.
         if(!broken)
